@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>Inicio de Sesión - E-Commerce</title>
+</head>
+<body>
+  <nav>
+    <div class="nav__bar">
+      <a href="index.html" class="nav__logo">
+        <img src="images/logo.png" alt="logo" />
+        <span>MK</span>
+      </a>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-3-line"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container">
+    <div class="form-box">
+      <div class="form-value">
+        <form id="login-form">
+          <h2>Inicio de Sesión</h2>
+          <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" id="email" required>
+            <label>Email</label>
+          </div>
+          <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="password" required>
+            <label>Contraseña</label>
+          </div>
+          <div class="forget">
+            <label><input type="checkbox"> Recordar</label>
+            <a href="#">Recuperar Contraseña</a>
+          </div>
+          <button type="submit">Inicio</button>
+          <div class="register">
+            <p>No tienes una cuenta? <a href="register.html">Regístrate</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Previene el envío por defecto del formulario
+
+      // Obtener los valores de email y contraseña
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+      // Definir las credenciales válidas
+      var validEmail = 'usuario@gmail.com'; // Cambia este valor al correo válido
+      var validPassword = 'administrador'; // Cambia este valor a la contraseña válida
+
+      // Validar las credenciales
+      if (email === validEmail && password === validPassword) {
+        // Redirigir a la página deseada si las credenciales son válidas
+        window.location.href = './index1.html'; // Cambia esta URL a la página a la que deseas redirigir
+      } else {
+        // Mostrar un mensaje de error si las credenciales no son válidas
+        alert('Correo electrónico o contraseña incorrectos.');
+      }
+    });
+  </script>
+</body>
+</html>
